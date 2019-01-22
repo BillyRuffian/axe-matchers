@@ -8,10 +8,10 @@ module Axe
     class BeAccessible
       extend Forwardable
       def_delegators :@audit, :failure_message, :failure_message_when_negated
-      def_delegators :@run, :within, :excluding, :according_to, :checking, :checking_only, :skipping, :with_options
+      def_delegators :@run, :within, :excluding, :according_to, :according_to_ruleset, :checking, :checking_only, :skipping, :with_options
 
       extend ChainMail::Chainable
-      chainable :within, :excluding, :according_to, :checking, :checking_only, :skipping, :with_options
+      chainable :within, :excluding, :according_to, :according_to_ruleset, :checking, :checking_only, :skipping, :with_options
 
       def initialize
         @run = API::Run.new
